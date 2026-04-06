@@ -59,7 +59,6 @@ This function does not rely on `spgit--call-git' and uses a direct Git call."
   "Return the name of the current branch."
   (string-trim (spgit--call-git '("rev-parse" "--abbrev-ref" "HEAD"))))
 
-
 (defun spgit--current-commit-hash ()
   "Return the full SHA-1 hash of the current HEAD commit."
   (string-trim (spgit--call-git '("rev-parse" "HEAD"))))
