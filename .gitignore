@@ -25,7 +25,6 @@ dist/
 target/
 node_modules/
 vendo/
-vendor/
 build/
 .cache/
 

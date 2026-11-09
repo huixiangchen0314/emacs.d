@@ -1,20 +1,15 @@
-[submodule "vendor/lisp/buffter.el"]
-	path = vendor/lisp/buffter.el
-	url = https://github.com/huixiangchen0314/buffter.el
-
 [submodule "vendor/lisp/easyob.el"]
 	path = vendor/lisp/easyob.el
 	url = https://github.com/huixiangchen0314/easyob.el
-
 [submodule "vendor/lisp/lcltxt.el"]
 	path = vendor/lisp/lcltxt.el
 	url = https://github.com/huixiangchen0314/lcltxt.el
-
 [submodule "vendor/lisp/stpl.el"]
 	path = vendor/lisp/stpl.el
 	url = https://github.com/huixiangchen0314/stpl.el
-
 [submodule "vendor/lisp/vnode.el"]
 	path = vendor/lisp/vnode.el
 	url = https://github.com/huixiangchen0314/vnode.el
-
+[submodule "vendor/lisp/buffter.el"]
+	path = vendor/lisp/buffter.el
+	url = https://github.com/huixiangchen0314/buffter.el
