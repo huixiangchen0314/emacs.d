@@ -54,27 +54,26 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((js                  . t)
-	 (python              . t)
-	 (C                   . t)
-	 (java                . t)
-	 (go                  . t)
-	 (lua                 . t)
-	 (emacs-lisp          . t)
-	 (ruby                . t)
-	 (shell               . t)
-	 (css                 . t)
-	 (awk                 . t)
-	 (sql                 . t)
-	 (plantuml            . t)
-	 (dot                 . t)
+     (python              . t)
+     (C                   . t)
+     (java                . t)
+     (lua                 . t)
+     (emacs-lisp          . t)
+     (ruby                . t)
+     (shell               . t)
+     (css                 . t)
+     (awk                 . t)
+     (sql                 . t)
+     (plantuml            . t)
+     (dot                 . t)
      ))
   :custom
   (org-confirm-babel-evaluate nil)
   (org-babel-do-load-languages `())
   )
+
 (use-package uuidgen :ensure t)
 (use-package ob-rust :ensure t)
-(use-package ob-go :ensure t)
 (use-package ob-elixir :ensure t)
 (use-package ob-prolog :ensure t)
 (use-package graphviz-dot-mode :ensure t
@@ -82,35 +81,6 @@
   (define-derived-mode dot-mode graphviz-dot-mode "Dot"
     "Major mode for editing dot code."
     :group 'graphviz-dot))
-
-(easyob-def latex
-			"pdflatex -shell-escape -output-directory=$FILE_DIR $FILE && pdftoppm $FILE_SIMPLE.pdf -png $FILE_SIMPLE"
-			:extension ".tex"
-			:file "$FILE_SIMPLE-1.png"
-			:head "
-\\documentclass[varwidth,crop]{standalone}
-\\usepackage{amsmath}
-\\usepackage{mathtools}
-\\usepackage{mathdots}
-\\usepackage{esint}
-\\usepackage{amssymb}
-\\begin{document}
-"
-			:tail "
-\\end{document}"
-            )
-
-(easyob-def haskell
-            "runghc $FILE"
-            :extension ".hs"
-            :var "%S = %S")
-
-(easyob-def ruby
-            "ruby $FILE"
-            :extension ".rb"
-            :var "%S = %S")
-
-
 
 ;;(easyob-def lua
 ;;            "lua $FILE"

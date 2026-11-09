@@ -1,4 +1,7 @@
 ;;; init-rails.el --- Rails project support  -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
+
 
 (use-package projectile-rails
   :ensure t
@@ -13,7 +16,7 @@
 ;;   ;; 通常建议只选其一，这里以 projectile-rails 为主，注释掉 rails-mode
 ;;   )
 
-;; 配置 rake 命令（可选）
+;; 配置 rake 命令
 (use-package rake
   :ensure t
   :defer t)

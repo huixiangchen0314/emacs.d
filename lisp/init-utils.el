@@ -21,6 +21,19 @@
   (when (file-exists-p dir)
     (my/util/add-to-load-path dir)))
 
+(defun my/util/add-to-load-path-recursively (dir)
+  "Recursively add directories under DIR containing .el or .elc files to `load-path'."
+  (when (file-directory-p dir)
+    (dolist (file (directory-files-recursively
+                   dir "\\.elc?\\'"
+                   nil
+                   (lambda (f)
+                     (not (string-match-p
+                           "/\\(?:\\.git\\|node_modules\\|target\\)\\(?:/\\|$\\)"
+                           f)))))
+      (add-to-list 'load-path
+                   (directory-file-name (file-name-directory file))))))
+
 ;; ------------------------------------------------------------
 ;; Package repository management
 ;; ------------------------------------------------------------

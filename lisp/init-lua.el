@@ -1,4 +1,6 @@
-
+;;; init-rust.el --- Support for the Rust language -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (use-package lua-mode :ensure t
   :after reformatter
@@ -11,3 +13,4 @@
   (lua-indent-line  2))
 
 (provide 'init-lua)
+;;; init-lua.el ends here

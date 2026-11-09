@@ -1,3 +1,6 @@
+;;; init-java.el --- Support for the Java language -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (use-package java-ts-mode
   :mode "\\.java\\'"
@@ -31,3 +34,4 @@
 
 
 (provide 'init-java)
+;;; init-java.el ends here

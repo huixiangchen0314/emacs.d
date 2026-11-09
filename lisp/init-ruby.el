@@ -1,4 +1,6 @@
 ;;; init-ruby.el --- Ruby development setup  -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 
 (use-package ruby-ts-mode
   :ensure t

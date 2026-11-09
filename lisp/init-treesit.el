@@ -1,5 +1,6 @@
+;;; init-treesit.el --- Tree-sitter setup -*- lexical-binding: t; -*-
 
-
+;; 原则：仅本文件使用的命令/函数一律 _/ 前缀
 
 ;;; Enable built-in and pre-installed TS modes if the grammars are available
 
@@ -42,7 +43,7 @@ Return a list of languages seen along the way."
 
 ;;; Support remapping of additional libraries
 
-(defun my/remap-ts-mode (non-ts-mode ts-mode grammar)
+(defun _/remap-ts-mode (non-ts-mode ts-mode grammar)
   "Explicitly remap NON-TS-MODE to TS-MODE if GRAMMAR is available."
   (when (and (fboundp 'treesit-ready-p)
              (treesit-ready-p grammar t)
@@ -50,8 +51,8 @@ Return a list of languages seen along the way."
     (add-to-list 'major-mode-remap-alist (cons non-ts-mode ts-mode))))
 
 ;; When there's js-ts-mode, we also prefer it to js2-mode
-(my/remap-ts-mode 'js2-mode 'js-ts-mode 'javascript)
-(my/remap-ts-mode 'clojurescript-mode 'clojurescript-ts-mode 'clojure)
+(_/remap-ts-mode 'js2-mode 'js-ts-mode 'javascript)
+(_/remap-ts-mode 'clojurescript-mode 'clojurescript-ts-mode 'clojure)
 
 ;; Default
 (setq treesit-font-lock-level 4)
@@ -59,6 +60,8 @@ Return a list of languages seen along the way."
 (setq treesit-language-source-alist
       '((ruby . ("https://github.com/tree-sitter/tree-sitter-ruby" "v0.23.1" "src"))
         (java . ("https://github.com/tree-sitter/tree-sitter-java" "v0.23.4" "src"))
-        (c-sharp . ("https://github.com/tree-sitter/tree-sitter-c-sharp" "v0.23.0" "src"))))
-   
+        (c-sharp . ("https://github.com/tree-sitter/tree-sitter-c-sharp" "v0.23.0" "src"))
+        (rust . ("https://github.com/tree-sitter/tree-sitter-rust" "v0.24.0"))))
+
 (provide 'init-treesit)
+;;; init-treesit.el ends here

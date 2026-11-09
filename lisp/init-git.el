@@ -4,12 +4,6 @@
 
 ;;; Code:
 
-
-(add-to-list 'load-path
-             (expand-file-name "lisp/spgit" my/emacs-dir))
-(require 'spgit)
-
-
 ;; 提供针对 Git 相关配置文件的 major mode，例如 .gitignore、.gitattributes、.git/config 等文件，实现语法高亮、自动补全（部分）和基础编辑辅助。
 (use-package git-modes :ensure nil)
 

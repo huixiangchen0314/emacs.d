@@ -1,3 +1,8 @@
+;;; init-company.el --- Company setup -*- lexical-binding: t; -*-
+
+;;; Commentary:
+
+;;; Code:
 
 (use-package company
   :ensure t
@@ -20,5 +25,4 @@
 
 
 (provide 'init-company)
-
 ;;; init-company.el ends here
