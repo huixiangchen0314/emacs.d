@@ -25,6 +25,7 @@ dist/
 target/
 node_modules/
 vendo/
+vendor/
 build/
 .cache/
 
@@ -37,5 +38,4 @@ build/
 # ── 其他项目可能产生的文件 ──────────────────────
 .stack-work
 qr_*
-vendo/
 tmp
