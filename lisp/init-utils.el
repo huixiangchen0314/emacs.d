@@ -7,6 +7,7 @@
 ;;; Code:
 
 (require 'package)
+(require 'cl-lib)
 
 ;; ------------------------------------------------------------
 ;; Path utilities
@@ -58,11 +59,23 @@ Example: (my/util/list-files-in-dir \"/path\" \"el\")"
                    (list file)))
                (directory-files dir t pattern))))
 
+
+(defmacro my/util/add-to-list-all (target list-seq)
+  "Add each element of LIST-SEQ to TARGET, return the final list.
+TARGET is a symbol naming a variable, just like in `add-to-list'."
+  (declare (indent 1) (debug t))
+  (let ((seq (make-symbol "list-seq")))
+    `(let ((,seq ,list-seq))
+       (dolist (l ,seq)
+         (cl-pushnew l ,target :test #'equal))
+       ,target)))
+
 ;; ------------------------------------------------------------
 ;; String/sequence utilities
 ;; ------------------------------------------------------------
 
-(defun my/util/join (sequence separator &optional prefix suffix)
+(defun my/util/join (sequence separator
+                              &optional prefix suffix)
   "Join SEQUENCE of strings with SEPARATOR, optionally wrapping with PREFIX and SUFFIX.
 If PREFIX or SUFFIX are non-nil, they are added before/after the result."
   (let ((result (mapconcat 'identity sequence separator)))
@@ -74,12 +87,13 @@ If PREFIX or SUFFIX are non-nil, they are added before/after the result."
 ;; File renaming utilities
 ;; ------------------------------------------------------------
 
-(defun my/util/rename-files (oldnames newnames)
-  "Rename files from OLDNAMES to NEWNAMES sequentially.
-Both arguments are lists of file paths.  The number of files must match."
-  (when (and oldnames newnames)
-    (rename-file (car oldnames) (car newnames) t)
-    (my/util/rename-files (cdr oldnames) (cdr newnames))))
+(defun my/util/rename-files (renames)
+  "Rename files according to RENAMES.
+RENAMES is an alist of the form:
+  ((OLD1 . NEW1) (OLD2 . NEW2) ...)
+Each OLD is renamed to the corresponding NEW, overwriting the destination."
+  (dolist (pair renames)
+    (rename-file (car pair) (cdr pair) t)))
 
 ;; ------------------------------------------------------------
 ;; Interactive commands

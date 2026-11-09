@@ -57,11 +57,13 @@ Return a list of languages seen along the way."
 ;; Default
 (setq treesit-font-lock-level 4)
 
-(setq treesit-language-source-alist
+(my/util/add-to-list-all
+ treesit-language-source-alist
       '((ruby . ("https://github.com/tree-sitter/tree-sitter-ruby" "v0.23.1" "src"))
         (java . ("https://github.com/tree-sitter/tree-sitter-java" "v0.23.4" "src"))
         (c-sharp . ("https://github.com/tree-sitter/tree-sitter-c-sharp" "v0.23.0" "src"))
-        (rust . ("https://github.com/tree-sitter/tree-sitter-rust" "v0.24.0"))))
+        (rust . ("https://github.com/tree-sitter/tree-sitter-rust" "v0.23.3" ))))
+
 
 (provide 'init-treesit)
 ;;; init-treesit.el ends here

@@ -12,10 +12,10 @@
 
 ;;; Windmove
 (require 'windmove)
-(global-set-key (kbd "C-<left>") 'windmove-left)
-(global-set-key (kbd "C-<right>") 'windmove-right)
-(global-set-key (kbd "C-<up>") 'windmove-up)
-(global-set-key (kbd "C-<down>") 'windmove-down)
+(global-set-key (kbd "C-z <left>") 'windmove-left)
+(global-set-key (kbd "C-z <right>") 'windmove-right)
+(global-set-key (kbd "C-z <up>") 'windmove-up)
+(global-set-key (kbd "C-z <down>") 'windmove-down)
 ;;(unbind-key (kbd "C-<up>") 'eshell-hist-mode-map)
 ;;(unbind-key (kbd "C-<dowm>") 'eshell-hist-mode-map)
 (setq windmove-wrap-around t)
