@@ -1,3 +1,28 @@
+;;; init-utils.el --- Utility functions for Emacs configuration -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
+
+
+
+
+(use-package highlight-symbol
+  :ensure t
+  :init (highlight-symbol-mode)
+  :bind
+  ("<f3>" . highlight-symbol))
+
+(use-package avy
+  :ensure t
+  :chords
+  ("jc" . avy-goto-char)
+  ("jw" . avy-goto-word-1)
+  ("jl" . avy-goto-line))
+
+
+
+;; m1\n10 | int func%02d ()
+;; M-x tiny-expand
+(use-package tiny :ensure t)
 
 
 ;; Key-Chord allows us to bind regular keyboard keys for various commands without having to use prefix keys such as Ctrl, Alt or Super etc.
@@ -45,3 +70,4 @@
 
 
 (provide 'init-helper)
+;;; init-helper.el ends here.

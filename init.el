@@ -36,7 +36,6 @@
 (require 'init-windows)
 (require 'init-hydra)
 (require 'init-evil)
-(require 'init-helper)
 (require 'init-undo-tree)
 (require 'init-functions)
 (require 'init-yasnippet)
