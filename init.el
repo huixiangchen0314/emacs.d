@@ -37,7 +37,6 @@
 (require 'init-hydra)
 (require 'init-evil)
 (require 'init-undo-tree)
-(require 'init-functions)
 (require 'init-yasnippet)
 (require 'init-flymake)
 (require 'init-company)
