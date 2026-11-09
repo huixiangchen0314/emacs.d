@@ -2,10 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(defconst lyt-home-directory "d:/")
-(defconst lyt-emacs-directory "d:/emacs.d")
-(defconst lyt-roam-directory "d:/roam")
-
 ;; Load platform specific configuration.
 (cond
  ((eq system-type 'windows-nt)
