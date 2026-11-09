@@ -13,3 +13,6 @@
 [submodule "vendor/lisp/buffter.el"]
 	path = vendor/lisp/buffter.el
 	url = https://github.com/huixiangchen0314/buffter.el
+[submodule "vendor/lisp/clj-lib.el"]
+	path = vendor/lisp/clj-lib.el
+	url = https://github.com/huixiangchen0314/clj-lib.el

@@ -56,6 +56,8 @@
 (require 'init-quickrun)
 (require 'init-treemacs)
 
+(require 'clj-lib)
+
 (provide 'init)
 ;;; init.el ends here.
 
